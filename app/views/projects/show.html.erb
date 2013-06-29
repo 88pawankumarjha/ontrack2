@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<#% (0..@num-1).each do |i| %>
+<#%= i.to_s%> : <#%=@listings[i]['title'] %>   <br>   
+<#% end %>
+<hr/>
+<#%=@regions%>
+
+<hr />
+<#%= @r.elements["getserver/uploadform"].first %> <br />
+<%= @r.elements["oodle_response/current/region/name"].first %>
+<hr />
+<#%@titles.each_with_index do |title, idx|%>
+<#%= title => @links[idx]"%>
+<#%end%> <br /><hr />
+<%=@titles%>
+<%=@links[0]%><BR>
+	<%=@links[1]%>
+<hr/>
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @project.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
